@@ -17,10 +17,9 @@ public class Utils {
             }
 
             bufferedReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Path not found.");
-        } catch (IOException e) {
-            System.out.println("Error read file.");
+        }
+        catch (IOException e) {
+           e.printStackTrace();
         }
 
         return result;
@@ -34,10 +33,9 @@ public class Utils {
 
             bufferedWriter.close();
             fileWriter.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Path not found.");
-        } catch (IOException e) {
-            System.out.println("Error write file.");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -48,9 +46,11 @@ public class Utils {
     }
 
     public static void main(String[] args) {
-       Utils.writeContentToFile("F:\\CodeUET\\Java\\OOP\\src\\Week12\\test.txt", "Son Tung", false);
+       Utils.writeContentToFile("F:\\CodeUET\\Java\\OOP\\src\\Week12\\test.txt", "Hello", false);
+//        Utils.writeContentToFile("F:\\CodeUET\\Java\\OOP\\src\\Week12\\test.txt", "Son Tung", false);
+//       Utils.writeContentToFile("F:\\CodeUET\\Java\\OOP\\src\\Week12\\test.txt", "Son Tung", true);
 
        System.out.println(Utils.readContentFromFile("F:\\CodeUET\\Java\\OOP\\src\\Week12\\test.txt"));
-       System.out.println(Utils.findFileByName("F:\\CodeUET\\Java\\OOP\\src\\Week12", "test.txt"));
+//       System.out.println(Utils.findFileByName("F:\\CodeUET\\Java\\OOP\\src\\Week12", "test.txt"));
         }
     }
